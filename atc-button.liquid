@@ -1,0 +1,18 @@
+<atc-button>
+  {% form 'product', product %}
+    {% if product.has_only_default_variant %}
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+    {% else %}
+      <select name="id" required class="variant__select">
+        {% for variant in product.variants %}
+          {% if variant.available %}
+            <option value="{{ variant.id }}">{{ variant.title }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    {% endif %}
+    <input type="hidden" name="quantity" value="1">
+    <input type="submit" value="CLAIM" class="claim__button">
+  {% endform %}
+</atc-button>
+
