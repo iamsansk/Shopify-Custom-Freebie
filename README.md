@@ -214,6 +214,22 @@ Let’s call it what it is:
 It doesn’t hurt conversion, it’s extremely low-risk, and in real-world usage, **it just works**.  
 I've tested it, tracked it, and optimized for the real scenarios — not just the edge cases.
 
+# Best Way to Utilise Freebie Feature
+
+### ✅ Recommendations
+
+- Use **Freebie as a Pop-Up** when you are using a **cart page**.
+- Use **Freebie shown in the cart footer** when you are using a **cart drawer**.
+  
+## 🐛 Found a Bug?
+
+If you found any bugs in the code, feel free to:
+
+- 📬 Reach out via email: [santhoshkumarb1309@gmail.com](mailto:santhoshkumarb1309@gmail.com)
+- 🐙 Open an issue on GitHub: [GitHub Issues](https://github.com/iamsansk/Shopify-Custom-Freebie/issues)
+
+Your feedback is always appreciated!
+
 ---
 
 
