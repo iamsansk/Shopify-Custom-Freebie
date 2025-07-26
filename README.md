@@ -198,7 +198,8 @@ It works well, but here's a little behind-the-scenes magic worth noting:
 
 ### 😅 What Could Happen
 - If a customer **manually adds** a product that’s also part of a freebie tier, the discount may still apply — even if they haven't qualified.
-- If a cart includes **two products from the same freebie tier**, Shopify might **discount them all**, not just one.
+- If a cart includes two products from the same freebie tier, Shopify might apply discounts to both, not just one. This means the customer ends up receiving two freebies from Tier 1, and as a result, they won’t see Tier 2 freebies at all.
+But that’s okay since they’re getting two free items, the customer is happy, and we’re safe too. Win-win 😜
 
 ### 😎 Don’t worry!
 > **We deliberately use low-selling or overstock SKUs as freebies** — so chances are, customers won’t add them on their own.
