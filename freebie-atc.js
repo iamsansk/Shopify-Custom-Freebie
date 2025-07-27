@@ -40,6 +40,20 @@ class atcButton extends HTMLElement {
           sections: parsedState
         });
       }
+      // NEW: Get latest cart state and dispatch custom event
+        fetch("/cart.js")
+          .then((res) => res.json())
+          .then((cartData) => {
+            window.dispatchEvent(
+              new CustomEvent("cart:updated", {
+                detail: {
+                  source: "main-cart-items",
+                  cartData: cartData,
+                  variantId: null,
+                },
+              })
+            );
+          });
     })
     .catch((error) => {
       console.error('Error:', error);
