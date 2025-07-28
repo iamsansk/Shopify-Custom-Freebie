@@ -146,6 +146,22 @@ If you've **already modified any core theme files** like `cart-drawer.liquid` or
             "value": "CartFooter"
           }
         ]
+      },
+      {
+        "type": "header",
+        "content": "Freebie theme customisation"
+      },
+      {
+        "type": "color",
+        "id": "loader_color",
+        "label": "Loader Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "claim_button_color",
+        "label": "Button",
+        "default": "#000000"
       }
     ]
   }
