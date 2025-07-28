@@ -1,6 +1,9 @@
 # 🛍️ Shopify Freebie Feature Integration
 
 > **IMPORTANT:** Before proceeding, **duplicate the theme** you are working on to avoid losing any existing customizations.
+This feature has been created specifically to match our brand’s requirements.  
+However, if you’d like to expand it or add more features **feel free to customize it further** based on your needs.
+
 
 This repository contains all the necessary code to add the **Freebie Add to Cart** (ATC) feature to your Shopify store.
 
