@@ -96,7 +96,7 @@ If you've **already modified any core theme files** like `cart-drawer.liquid` or
         "type": "text",
         "id": "excluded_ids",
         "label": "Excluded Products",
-        "info": "Add the product variant ID's that you don't want to give freebie"
+        "info": "Enter product variant IDs separated by commas. If any of these products are in the cart, the freebie popup will not be shown."
       },
       {
         "type": "header",
