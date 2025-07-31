@@ -93,6 +93,12 @@ If you've **already modified any core theme files** like `cart-drawer.liquid` or
         "label": "Enable Freebie"
       },
       {
+        "type": "text",
+        "id": "excluded_ids",
+        "label": "Excluded Products",
+        "info": "Add the product variant ID's that you don't want to give freebie"
+      },
+      {
         "type": "header",
         "content": "Freebie Tier 1"
       },
