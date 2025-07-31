@@ -24,9 +24,16 @@
       selector: '.freebie-tier-2'
     }
   ];
+  window.EXCLUDED_PRODUCT_IDS = [
+    {% assign ids = settings.excluded_ids | split: ',' %}
+    {% for id in ids %}
+      {{ id | strip | plus: 0 }}{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  ];
 </script>
 
-{% if settings.enable_freebie %}
+
+{% if settings.enable_freebie and settings.freebie_product_list %}
   {% if settings.freebie_option == 'PopUp' %}
     <div class="main__freebie__container freebie-tier-1" style="display: none;">
       <h2>Freebie for ₹{{ settings.freebie_threshold_1 }}</h2>
@@ -156,6 +163,7 @@
       }
     </style>
     <script>
+      const EXCLUDED_VARIANT_IDS = window.EXCLUDED_PRODUCT_IDS || [];
       function handleFreebieDisplay(cart, override = false) {
         if (!window.freebieTiers || window.freebieTiers.length < 2) return;
       
@@ -167,6 +175,12 @@
           const container = document.querySelector(tier.selector);
           if (container) container.style.display = "none";
         });
+
+        // 🚫 Check if cart contains any excluded products
+        const hasExcludedProduct = cart.items.some(item =>
+          EXCLUDED_VARIANT_IDS.includes(item.variant_id)
+        );
+        if (hasExcludedProduct) return;
       
         // Respect settings
         if (!tier1.enabled && !tier2.enabled) return;
@@ -387,6 +401,7 @@
       }
     </style>
     <script>
+      const EXCLUDED_VARIANT_IDS = window.EXCLUDED_PRODUCT_IDS || [];
       function handleFreebieDisplay(cart) {
         if (!window.freebieTiers || window.freebieTiers.length < 2) return;
     
@@ -399,6 +414,12 @@
           const container = document.querySelector(tier.selector);
           if (container) container.style.display = "none";
         });
+
+        // 🚫 Check if cart contains any excluded products
+        const hasExcludedProduct = cart.items.some(item =>
+          EXCLUDED_VARIANT_IDS.includes(item.variant_id)
+        );
+        if (hasExcludedProduct) return;
     
         // Respect the setting: skip if not enabled
         if (!tier1.enabled && !tier2.enabled) return;
